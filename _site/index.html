@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroLANCE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Decoupling Trajectory Planning from Visual Grounding for Low-altitude Aerial Navigation</h1>
+    <div class="authors">
+        <a href="https://sadmankiba.github.io/" target="_blank">Sadman Sakib</a>, <a href="https://hysk-cmd.github.io/" target="_blank">Seungheon Yang</a>, 
+        <a href="https://aicps.eng.uci.edu/" target="_blank">Mohammad Al Faraque</a>, <a href="https://unnat.github.io/" target="_blank">Unnat Jain</a>
+    </div>
+    <div class="affilations">
+        University of California, Irvine
+    </div>
+    <!--Links-->
+    <div class="btn_links">
+        <a class="btn">
+            <i class="fas fa-file-pdf"></i>
+            Paper
+        </a>
+        <a class="btn" href="https://github.com/sadmankiba/AeroLANCE" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            Code
+        </a>
+        <a class="btn">
+            <img src="assets/svg/arxiv.svg" alt="arXiv logo" width="13" height="13"/>
+            arXiv
+        </a>
+        <a class="btn" href="#results">
+            📊 Result
+        </a>
+        <a class="btn" href="#videos">
+            📷 Video
+        </a>
+    </div>
+    <!--design/abstract-->
+    <section class="AeroLANCE design" id="abstract">
+        <img src="assets/images/LANCE-v5.png" alt="AeroLANCE design image" width="1000"/>
+        <h2>TLDR</h2>
+        <p>
+
+Aerial Low-Altitude Navigation in Complex Environments (AeroLANCE) is a training-free navigation framework for vision-language navigation (VLN) with drones. AeroLANCE splits the VLN task into two separate components -- Trajectory Planning which derives a safe UAV trajectory through 3D spatial computation and Target Recognition which performs semantic processing of instruction and camera images with vision-language models. By employing scene-agnostic algorithms for trajectory planning  and zero-shot VLMs for target recognition, AeroLANCE generalizes across various types of outdoor and indoor environments. AeroLANCE build a dense 3D occupancy map of the environment in real time and uses it for spatial reasoning. Additionally, it takes proactive and reactive safety measures to avoid collision in complex environments. AeroLANCE tracks potential target instances, looks for key surrounding objects and evaluates a location combining visual and spatial information.
+
+<!-- Existing Aerial VLN methods saves observation history in unstructured text, image tokens or sparse 3D information. In contrast, AeroLANCE builds a dense 3D map of the environment in real time and uses it for spatial reasoning.-->   
+        </p>
+    </section>
+
+    <section id="method">
+        <h2>OpenUAV VLN Tasks</h2>
+        <div class="video-wide">
+            <video autoplay loop muted playsinline preload="metadata" controls>
+                <source src="assets/videos/traj_3d_cam_occup_bff9a.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p></p>
+    </section>
+    <!--<section id="results">
+        <h2>Results</h2>
+        <div class="results-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </section>-->
+    <section id="videos">
+        <h2>Real-world Experiments</h2>
+        <div class="video-grid">
+            <video autoplay loop muted playsinline preload="metadata" controls>
+                <source src="assets/videos/3p_view_open.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video autoplay loop muted playsinline preload="metadata" controls>
+                <source src="assets/videos/ego_occup_open.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video autoplay loop muted playsinline preload="metadata" controls>
+                <source src="assets/videos/3p_view_hallway.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video autoplay loop muted playsinline preload="metadata" controls>
+                <source src="assets/videos/ego_occup_hallway.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+</body>
+</html>
