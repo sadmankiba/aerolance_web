@@ -1,4 +1,4 @@
-html {
+html{
     scroll-behavior: smooth;
 }
 :root{
@@ -27,9 +27,13 @@ body{
 }
 h1{
     margin-bottom: 30px;
+    font-size: 52px;
 }
 .authors{
     margin-bottom: 10px;
+    font-size: 26px;
+    text-decoration: underline;
+    text-decoration-color: blue;
 }
 .authors a{
     text-decoration: none;
@@ -39,7 +43,7 @@ h1{
     text-decoration: underline;
 }
 
-.btn {
+.btn{
     display: inline-block;
     padding: 8px 20px;
     border: none;
@@ -55,22 +59,46 @@ h1{
     background:#1a1a1a;
 }
 
-.video-grid {
+h2{
+    padding: 10px 0px 10px 0px;
+}
+
+.AeroLANCE-design{
+    padding: 0px 0px 60px 0px;
+}
+
+section{
+    font-size: 26px;
+    padding: 30px 0px 30px 0px;
+}
+
+.AeroLANCE-design p{
+    text-align: left;
+    font-size: 18px;
+}
+
+.design_image{
+    padding: 0px 0px 30px 0px;
+}
+
+.video-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 40px;
     justify-items: center;
     align-items: center;
-    margin: 30px auto;
+    margin: auto;
     max-width: 900px;
 }
+
 .video-grid video {
     width: 100%;
     max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
 }
+
 .video-wide video {
     width: 100%;
     max-width: 800px;

@@ -2,6 +2,8 @@
 
 This folder contains a static HTML website.
 
+## With Python
+
 From this `website` directory, run:
 
 ```bash
@@ -18,3 +20,10 @@ If your entry page is named `index.html` , it will open automatically at that UR
 
 To stop the server, press `Ctrl+C` in the terminal.
 
+
+
+## With Jekyll
+
+```
+jekyll serve
+```
