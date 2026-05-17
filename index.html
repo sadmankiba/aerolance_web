@@ -13,11 +13,12 @@
 <body>
     <h1>Decoupling Trajectory Planning from Visual Grounding for Low-altitude Aerial Navigation</h1>
     <div class="authors">
-        <a href="https://sadmankiba.github.io/" target="_blank">Sadman Sakib</a>, <a href="https://hysk-cmd.github.io/" target="_blank">Seungheon Yang</a>, 
-        <a href="https://aicps.eng.uci.edu/" target="_blank">Mohammad Al Faraque</a>, <a href="https://unnat.github.io/" target="_blank">Unnat Jain</a>
+        <a href="https://sadmankiba.github.io/" target="_blank">Sadman Sakib</a><sup>1,†</sup>, <a href="https://hysk-cmd.github.io/" target="_blank">Seungheon Yang</a><sup>1</sup>,
+        <a href="https://aicps.eng.uci.edu/" target="_blank">Mohammad Al Faruque</a><sup>1,2,3,*</sup>, <a href="https://unnat.github.io/" target="_blank">Unnat Jain</a><sup>2,*</sup>
     </div>
     <div class="affilations">
-        University of California, Irvine
+        University of California, Irvine <br>
+        IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026
     </div>
     <!--Links-->
     <div class="btn_links">
@@ -40,56 +41,141 @@
             📷 Video
         </a>
     </div>
+    <!--teaser video-->
+    <section class="video-wide">
+        <video muted playsinline preload="metadata" controls>
+            <source src="assets/videos/teaser.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
     <!--design/abstract-->
     <section class="AeroLANCE-design" id="abstract">
+        <h2>AeroLANCE Pipeline</h2>
         <video autoplay muted playsinline class="design_video">
             <source src="assets/videos/AeroLANCE_design.mp4" type="video/mp4">
         </video>
+    </section>
+
+    <!--gallery-->
+    <section id="gallery">
+        <h2>Video Gallery</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">&#8249;</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide active">
+                        <video loop muted playsinline preload="metadata" controls>
+                            <source src="assets/gallery/newyork1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-slide next">
+                        <video loop muted playsinline preload="metadata" controls>
+                            <source src="assets/gallery/newyork2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-slide">
+                        <video loop muted playsinline preload="metadata" controls>
+                            <source src="assets/gallery/carlatown1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-slide">
+                        <video loop muted playsinline preload="metadata" controls>
+                            <source src="assets/gallery/carlatown2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" onclick="moveCarousel(1)">&#8250;</button>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+    </section>
+
+    <!--TLDR-->
+    <section class="AeroLANCE-design" id="tldr">
         <h2>TLDR</h2>
         <p>
             Aerial Low-Altitude Navigation in Complex Environments (AeroLANCE) is a training-free navigation framework for vision-language navigation (VLN) with drones. AeroLANCE splits the VLN task into two separate components -- Trajectory Planning which derives a safe UAV trajectory through 3D spatial computation and Target Recognition which performs semantic processing of instruction and camera images with vision-language models. By employing scene-agnostic algorithms for trajectory planning  and zero-shot VLMs for target recognition, AeroLANCE generalizes across various types of outdoor and indoor environments. AeroLANCE build a dense 3D occupancy map of the environment in real time and uses it for spatial reasoning. Additionally, it takes proactive and reactive safety measures to avoid collision in complex environments. AeroLANCE tracks potential target instances, looks for key surrounding objects and evaluates a location combining visual and spatial information.
-            <!-- Existing Aerial VLN methods saves observation history in unstructured text, image tokens or sparse 3D information. In contrast, AeroLANCE builds a dense 3D map of the environment in real time and uses it for spatial reasoning.-->   
+            <!-- Existing Aerial VLN methods saves observation history in unstructured text, image tokens or sparse 3D information. In contrast, AeroLANCE builds a dense 3D map of the environment in real time and uses it for spatial reasoning.-->
         </p>
     </section>
 
+    <!--OpenUAV VLN Task-->
     <section id="method">
         <h2>OpenUAV VLN Tasks</h2>
         <div class="video-wide">
-            <video autoplay loop muted playsinline preload="metadata" controls>
+            <video muted playsinline preload="metadata" controls>
                 <source src="assets/videos/traj_3d_cam_occup_bff9a.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <p></p>
     </section>
-    <!--<section id="results">
-        <h2>Results</h2>
-        <div class="results-grid">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </section>-->
+
+    <!--Experiment videos-->
     <section id="videos">
         <h2>Real-world Experiments</h2>
         <div class="video-grid">
-            <video autoplay loop muted playsinline preload="metadata" controls>
+            <video muted playsinline preload="metadata" controls>
                 <source src="assets/videos/3p_view_open.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay loop muted playsinline preload="metadata" controls>
+            <video muted playsinline preload="metadata" controls>
                 <source src="assets/videos/ego_occup_open.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay loop muted playsinline preload="metadata" controls>
+            <video muted playsinline preload="metadata" controls>
                 <source src="assets/videos/3p_view_hallway.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay loop muted playsinline preload="metadata" controls>
+            <video muted playsinline preload="metadata" controls>
                 <source src="assets/videos/ego_occup_hallway.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
     </section>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        function moveCarousel(dir) {
+            currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCarousel);
+
+        function updateCarousel() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+            const nextIndex = (currentSlide + 1) % totalSlides;
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev', 'next');
+                const video = slide.querySelector('video');
+                if (i === currentSlide) {
+                    slide.classList.add('active');
+                    video.play();
+                } else {
+                    if (i === prevIndex) slide.classList.add('prev');
+                    else if (i === nextIndex) slide.classList.add('next');
+                    video.pause();
+                }
+            });
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+    </script>
 </body>
 </html>

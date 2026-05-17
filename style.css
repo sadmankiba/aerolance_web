@@ -17,9 +17,9 @@ html{
 
 body{
     font-family: var(--text-font);
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 60px 40px;
     line-height: 1.6;
     background: var(--background-color);
     color: #333;
@@ -31,16 +31,21 @@ h1{
 }
 .authors{
     margin-bottom: 10px;
-    font-size: 26px;
-    text-decoration: underline;
-    text-decoration-color: blue;
+    font-size: 24px;
 }
 .authors a{
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: blue;
     color: blue;
 }
 .authors a:hover{
     text-decoration: underline;
+}
+.authors sup{
+    font-size: 13px;
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn{
@@ -64,7 +69,16 @@ h2{
 }
 
 .AeroLANCE-design{
-    padding: 0px 0px 60px 0px;
+    padding: 60px 0px 60px 0px;
+}
+#abstract{
+    padding: 20px 0px 10px 0px;
+}
+#gallery{
+    background: #f7f7f7;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 30px 0 40px 0;
 }
 
 section{
@@ -84,27 +98,121 @@ section{
     object-fit: cover;
 }
 
-.video-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 40px;
-    justify-items: center;
+.carousel-container {
+    position: relative;
+    display: flex;
     align-items: center;
-    margin: auto;
-    max-width: 900px;
+    width: 100%;
 }
 
-.video-grid video {
+.carousel-track-wrapper {
+    width: 27%;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.carousel-track {
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 400px;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.carousel-slide.active {
+    position: relative;
+    opacity: 1;
+    transform: none;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.carousel-slide.prev {
+    opacity: 0.55;
+    transform: translateX(-33%) scale(0.8);
+    z-index: 1;
+}
+
+.carousel-slide.next {
+    opacity: 0.55;
+    transform: translateX(33%) scale(0.8);
+    z-index: 1;
+}
+
+.carousel-slide video {
+    width: 100%;
     border-radius: 12px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
+
+.carousel-btn {
+    position: absolute;
+    z-index: 10;
+    background: #2d2d2d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.prev-btn { left: calc(50% - 550px); }
+.next-btn { right: calc(50% - 550px); }
+
+.carousel-btn:hover {
+    background: #1a1a1a;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dot.active {
+    background: #2d2d2d;
 }
 
 .video-wide video {
     width: 100%;
     max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-grid video {
+    width: 100%;
     border-radius: 12px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 1);
 }
